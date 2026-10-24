@@ -1,0 +1,598 @@
+{
+  "model": "qwen2.5:3b-instruct",
+  "endpoint": "http://127.0.0.1:11434/v1",
+  "date": "2026-10-24",
+  "machine": "arm64 Darwin 27.0.0",
+  "summary": {
+    "en": {
+      "right": 7,
+      "wrong": 0,
+      "leaked": 0,
+      "missed": 1,
+      "held": 3,
+      "n": 11,
+      "context_recall": 1.0,
+      "context_precision": 1.0,
+      "faithfulness": 0.971,
+      "answer_relevance": 0.884,
+      "figure_recall": 1.0,
+      "p50_ms": 3209,
+      "p95_ms": 4753
+    },
+    "hi": {
+      "right": 7,
+      "wrong": 0,
+      "leaked": 0,
+      "missed": 1,
+      "held": 1,
+      "n": 9,
+      "context_recall": 1.0,
+      "context_precision": 1.0,
+      "faithfulness": 0.957,
+      "answer_relevance": 0.837,
+      "figure_recall": 0.667,
+      "p50_ms": 4064,
+      "p95_ms": 10981
+    },
+    "hinglish": {
+      "right": 4,
+      "wrong": 0,
+      "leaked": 0,
+      "missed": 0,
+      "held": 1,
+      "n": 5,
+      "context_recall": 1.0,
+      "context_precision": 0.875,
+      "faithfulness": 0.86,
+      "answer_relevance": 0.809,
+      "figure_recall": 1.0,
+      "p50_ms": 3527,
+      "p95_ms": 15142
+    }
+  },
+  "cases": [
+    {
+      "q": "What is the PM-JAY cover limit per family per year?",
+      "form": "en",
+      "state": "bihar",
+      "expect": "pmjay-bihar",
+      "outcome": "right",
+      "ms": 3425,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='What is the PM-JAY cover limit per family per year?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='What is the PM-JAY cover limit per family per year?') -> generated from pmjay-bihar#1 at 0.91x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "Five lakh rupees per family per year.",
+      "citations": [
+        "pmjay-bihar#1"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.837,
+      "figure_recall": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "आयुष्मान भारत में प्रति परिवार कितना कवर मिलता है?",
+      "form": "hi",
+      "state": "bihar",
+      "expect": "pmjay-bihar",
+      "outcome": "right",
+      "ms": 3867,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='आयुष्मान भारत में प्रति परिवार कितना कवर मिलता है?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='आयुष्मान भारत में प्रति परिवार कितना कवर मिलता है?') -> generated from pmjay-bihar#2 at 0.89x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "बिहार में पीएम-जय कवर प्रति परिवार प्रति वर्ष पचास हज़ार रुपये का अतिरिक्त टॉप-अप देता है।",
+      "citations": [
+        "pmjay-bihar#2"
+      ],
+      "faithfulness": 0.933,
+      "relevance": 0.819,
+      "figure_recall": 0.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "ayushman bharat yojana mein kitna cover milta hai",
+      "form": "hinglish",
+      "state": "bihar",
+      "expect": "pmjay-bihar",
+      "outcome": "right",
+      "ms": 3527,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='ayushman bharat yojana mein kitna cover milta hai') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='ayushman bharat yojana mein kitna cover milta hai') -> generated from pmjay-bihar#1,pmjay-bihar#2 at 0.81x floor",
+        "verifier: passed, 2 dated source(s)"
+      ],
+      "answer": "Ayushman Bharat yojana covers secondary and tertiary hospital treatment for eligible families up to five lakh rupees per family per year in Bihar, with the state adding a top-up of fifty thousand rupees per family per year for listed cardiac and oncology packages.",
+      "citations": [
+        "pmjay-bihar#1",
+        "pmjay-bihar#2"
+      ],
+      "faithfulness": 0.941,
+      "relevance": 0.821,
+      "figure_recall": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "Does Jharkhand run a state top-up on PM-JAY?",
+      "form": "en",
+      "state": "jharkhand",
+      "expect": "pmjay-jharkhand",
+      "outcome": "missed",
+      "ms": 4179,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='Does Jharkhand run a state top-up on PM-JAY?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='Does Jharkhand run a state top-up on PM-JAY?') -> nothing returned: model_abstained",
+        "escalation: model_abstained"
+      ],
+      "reason": "model_abstained",
+      "note": "retrieval cleared the floor, the model said the sources do not answer it",
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "झारखंड में पीएम-जय पर राज्य टॉप-अप है क्या?",
+      "form": "hi",
+      "state": "jharkhand",
+      "expect": "pmjay-jharkhand",
+      "outcome": "right",
+      "ms": 3875,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='झारखंड में पीएम-जय पर राज्य टॉप-अप है क्या?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='झारखंड में पीएम-जय पर राज्य टॉप-अप है क्या?') -> generated from pmjay-jharkhand#2 at 0.88x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "झारखंड में पीएम-जय पर कोई राज्य टॉप-अप नहीं है।",
+      "citations": [
+        "pmjay-jharkhand#2"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.878,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "What is the Janani Suraksha Yojana amount for a rural delivery?",
+      "form": "en",
+      "state": "bihar",
+      "expect": "jsy-bihar",
+      "outcome": "right",
+      "ms": 3209,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='What is the Janani Suraksha Yojana amount for a rural delivery?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='What is the Janani Suraksha Yojana amount for a rural delivery?') -> generated from jsy-bihar#1 at 0.92x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "The Janani Suraksha Yojana amount for a rural delivery in Bihar is fourteen hundred rupees.",
+      "citations": [
+        "jsy-bihar#1"
+      ],
+      "faithfulness": 0.9,
+      "relevance": 0.933,
+      "figure_recall": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "जननी सुरक्षा योजना में ग्रामीण प्रसव पर कितनी राशि मिलती है?",
+      "form": "hi",
+      "state": "bihar",
+      "expect": "jsy-bihar",
+      "outcome": "right",
+      "ms": 4064,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='जननी सुरक्षा योजना में ग्रामीण प्रसव पर कितनी राशि मिलती है?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='जननी सुरक्षा योजना में ग्रामीण प्रसव पर कितनी राशि मिलती है?') -> generated from jsy-bihar#2 at 0.93x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "बिहार में ग्रामीण प्रसव के लिए चौदह सौ रुपये मिलती हैं।",
+      "citations": [
+        "jsy-bihar#2"
+      ],
+      "faithfulness": 0.857,
+      "relevance": 0.824,
+      "figure_recall": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "janani suraksha yojna gramin prasav ki rashi kitni hai",
+      "form": "hinglish",
+      "state": "bihar",
+      "expect": "jsy-bihar",
+      "outcome": "right",
+      "ms": 3212,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='janani suraksha yojna gramin prasav ki rashi kitni hai') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='janani suraksha yojna gramin prasav ki rashi kitni hai') -> generated from jsy-bihar#1 at 0.84x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "In Bihar, the Janani Suraksha Yojana pays fourteen hundred rupees for a rural delivery and one thousand rupees for an urban delivery.",
+      "citations": [
+        "jsy-bihar#1"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.831,
+      "figure_recall": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "What is the Janani Suraksha Yojana amount for a rural delivery?",
+      "form": "en",
+      "state": "jharkhand",
+      "expect": "jsy-jharkhand",
+      "outcome": "right",
+      "ms": 2968,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='What is the Janani Suraksha Yojana amount for a rural delivery?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='What is the Janani Suraksha Yojana amount for a rural delivery?') -> generated from jsy-jharkhand#1 at 0.92x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "The Janani Suraksha Yojana amount for a rural delivery in Jharkhand is seventeen hundred rupees.",
+      "citations": [
+        "jsy-jharkhand#1"
+      ],
+      "faithfulness": 0.9,
+      "relevance": 0.924,
+      "figure_recall": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "जननी सुरक्षा योजना में शहरी प्रसव पर कितनी राशि मिलती है?",
+      "form": "hi",
+      "state": "jharkhand",
+      "expect": "jsy-jharkhand",
+      "outcome": "right",
+      "ms": 3017,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='जननी सुरक्षा योजना में शहरी प्रसव पर कितनी राशि मिलती है?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='जननी सुरक्षा योजना में शहरी प्रसव पर कितनी राशि मिलती है?') -> generated from jsy-jharkhand#2 at 0.93x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "बारह सौ रुपये",
+      "citations": [
+        "jsy-jharkhand#2"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.802,
+      "figure_recall": 1.0,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "What should staff do when a listed drug is out of stock?",
+      "form": "en",
+      "state": "bihar",
+      "expect": "drugs",
+      "outcome": "right",
+      "ms": 4189,
+      "trace": [
+        "llm:intent: clinic",
+        "resolver: resolve_drug(question='What should staff do when a listed drug is out of stock?') -> no drug in the formulary fits",
+        "router: docs: procedure question",
+        "docs: answer_from_documents(query='What should staff do when a listed drug is out of stock?') -> generated from drugs#1 at 0.88x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "When a listed drug is not available in clinic stock, staff record the stock-out against the drug code the same day and raise an indent to the block store. Patients are not told a substitute is equivalent. Substitution is a prescriber decision and the prescriber records it in the patient file.",
+      "citations": [
+        "drugs#1"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.871,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "दवा स्टॉक में न हो तो क्या करना चाहिए?",
+      "form": "hi",
+      "state": "bihar",
+      "expect": "drugs",
+      "outcome": "right",
+      "ms": 8680,
+      "trace": [
+        "llm:intent: clinic",
+        "resolver: resolve_drug(question='दवा स्टॉक में न हो तो क्या करना चाहिए?') -> no drug in the formulary fits",
+        "router: docs: procedure question",
+        "docs: answer_from_documents(query='दवा स्टॉक में न हो तो क्या करना चाहिए?') -> generated from drugs#2 at 0.88x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "दवा स्टॉक में न होने पर, कर्मचारी उसी दिन दवा कोड के साथ स्टॉक-आउट दर्ज करें और ब्लॉक स्टोर को इंडेंट भेजें। यह नहीं बताया जाता कि कोई विकल्प समान है। विकल्प देने का निर्णय चिकित्सक का है और वही उसे मरीज़ की फ़ाइल में दर्ज करता है।",
+      "citations": [
+        "drugs#2"
+      ],
+      "faithfulness": 0.968,
+      "relevance": 0.867,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "dawa stock mein nahi hai to kya karna chahiye",
+      "form": "hinglish",
+      "state": "jharkhand",
+      "expect": "drugs",
+      "outcome": "right",
+      "ms": 6051,
+      "trace": [
+        "llm:intent: clinic",
+        "resolver: resolve_drug(question='dawa stock mein nahi hai to kya karna chahiye') -> no drug in the formulary fits",
+        "router: docs: procedure question",
+        "docs: answer_from_documents(query='dawa stock mein nahi hai to kya karna chahiye') -> generated from drugs#2,drugs#1 at 0.80x floor",
+        "verifier: passed, 2 dated source(s)"
+      ],
+      "answer": "दवा कोड के साथ स्टोक-आउट दर्ज करना और ब्लॉक स्टोर को इंडेंट भेजना है, यह दवा स्टॉक में नहीं होने के लिए कार्यवाहिनी को कहा गया है।",
+      "citations": [
+        "drugs#2",
+        "drugs#1"
+      ],
+      "faithfulness": 0.625,
+      "relevance": 0.798,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "How often are cold chain items checked against the temperature log?",
+      "form": "en",
+      "state": "jharkhand",
+      "expect": "drugs",
+      "outcome": "right",
+      "ms": 3034,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='How often are cold chain items checked against the temperature log?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='How often are cold chain items checked against the temperature log?') -> generated from drugs#3 at 0.93x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "Cold chain items are checked against the temperature log at the start and end of every shift.",
+      "citations": [
+        "drugs#3"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.918,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "कोल्ड चेन सामग्री की जाँच कब होती है?",
+      "form": "hi",
+      "state": "bihar",
+      "expect": "drugs",
+      "outcome": "right",
+      "ms": 5649,
+      "trace": [
+        "llm:intent: clinic",
+        "resolver: resolve_drug(question='कोल्ड चेन सामग्री की जाँच कब होती है?') -> no drug in the formulary fits",
+        "router: docs: procedure question",
+        "docs: answer_from_documents(query='कोल्ड चेन सामग्री की जाँच कब होती है?') -> generated from drugs#4 at 0.91x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "कोल्ड चेन सामग्री की जाँच हर शिफ़्ट के शुरू और अंत में तापमान लॉग से की जाती है।",
+      "citations": [
+        "drugs#4"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.831,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "When does a clinic refer a patient to the district hospital?",
+      "form": "en",
+      "state": "bihar",
+      "expect": "protocols",
+      "outcome": "right",
+      "ms": 4673,
+      "trace": [
+        "llm:intent: clinic",
+        "resolver: resolve_drug(question='When does a clinic refer a patient to the district hospital?') -> no drug in the formulary fits",
+        "router: docs: procedure question",
+        "docs: answer_from_documents(query='When does a clinic refer a patient to the district hospital?') -> generated from protocols#1 at 0.91x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "A clinic refers a patient to the district hospital when the condition is outside the clinic's listed scope of care, or when a required drug or test is unavailable and the condition will not wait.",
+      "citations": [
+        "protocols#1"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.861,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "ज़िला अस्पताल कब रेफर किया जाता है?",
+      "form": "hi",
+      "state": "jharkhand",
+      "expect": "protocols",
+      "outcome": "missed",
+      "ms": 5302,
+      "trace": [
+        "llm:intent: clinic",
+        "resolver: resolve_drug(question='ज़िला अस्पताल कब रेफर किया जाता है?') -> no drug in the formulary fits",
+        "router: docs: procedure question",
+        "docs: answer_from_documents(query='ज़िला अस्पताल कब रेफर किया जाता है?') -> nothing returned: model_abstained",
+        "escalation: model_abstained"
+      ],
+      "reason": "model_abstained",
+      "note": "retrieval cleared the floor, the model said the sources do not answer it",
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "zila aspatal kab refer kiya jata hai",
+      "form": "hinglish",
+      "state": "bihar",
+      "expect": "protocols",
+      "outcome": "right",
+      "ms": 15142,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='zila aspatal kab refer kiya jata hai') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='zila aspatal kab refer kiya jata hai') -> generated from protocols#2 at 0.80x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "ज़िला अस्पताल रेफरल क्लिनिक एक रेफरल सेवा है जो क्लिनिक मरीज़ को ज़िला अस्पताल भेजता है जब स्थिति क्लिनिक की निर्धारित सेवा सीमा से बाहर हो, या जरूरी दवा या जाँच उपलब्ध न हो।",
+      "citations": [
+        "protocols#2"
+      ],
+      "faithfulness": 0.875,
+      "relevance": 0.788,
+      "context_recall": 1.0,
+      "context_precision": 0.5
+    },
+    {
+      "q": "What happens to records when there is no connectivity?",
+      "form": "en",
+      "state": "bihar",
+      "expect": "protocols",
+      "outcome": "right",
+      "ms": 4753,
+      "trace": [
+        "llm:intent: clinic",
+        "resolver: resolve_drug(question='What happens to records when there is no connectivity?') -> no drug in the formulary fits",
+        "router: docs: procedure question",
+        "docs: answer_from_documents(query='What happens to records when there is no connectivity?') -> generated from protocols#3 at 0.89x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "When there is no connectivity, entries go into the local register with date and time and sync when the link returns. A conflict is left for the supervisor to resolve rather than being decided automatically.",
+      "citations": [
+        "protocols#3"
+      ],
+      "faithfulness": 1.0,
+      "relevance": 0.846,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "कनेक्टिविटी न होने पर रिकॉर्ड का क्या होता है?",
+      "form": "hi",
+      "state": "jharkhand",
+      "expect": "protocols",
+      "outcome": "right",
+      "ms": 10981,
+      "trace": [
+        "llm:intent: clinic",
+        "resolver: resolve_drug(question='कनेक्टिविटी न होने पर रिकॉर्ड का क्या होता है?') -> no drug in the formulary fits",
+        "router: docs: procedure question",
+        "docs: answer_from_documents(query='कनेक्टिविटी न होने पर रिकॉर्ड का क्या होता है?') -> generated from protocols#4 at 0.90x floor",
+        "verifier: passed, 1 dated source(s)"
+      ],
+      "answer": "कनेक्टिविटी न होने पर, प्रविष्टियाँ दिनांक और समय के साथ स्थानीय रजिस्टर में दर्ज होती हैं और लिंक आने पर सिंक होती हैं। सिंक कभी स्थानीय प्रविष्टि को नहीं बदलता।",
+      "citations": [
+        "protocols#4"
+      ],
+      "faithfulness": 0.941,
+      "relevance": 0.839,
+      "context_recall": 1.0,
+      "context_precision": 1.0
+    },
+    {
+      "q": "What is the weather in Patna tomorrow?",
+      "form": "en",
+      "state": "bihar",
+      "expect": "handoff",
+      "outcome": "held",
+      "ms": 2255,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='What is the weather in Patna tomorrow?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='What is the weather in Patna tomorrow?') -> nothing returned: below_floor",
+        "escalation: below_floor"
+      ],
+      "reason": "below_floor",
+      "note": "best was 0.754 dense and 0.000 lexical, against floors of 0.855 and 0.055"
+    },
+    {
+      "q": "Who won the cricket match last night?",
+      "form": "en",
+      "state": "jharkhand",
+      "expect": "handoff",
+      "outcome": "held",
+      "ms": 817,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='Who won the cricket match last night?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='Who won the cricket match last night?') -> nothing returned: below_floor",
+        "escalation: below_floor"
+      ],
+      "reason": "below_floor",
+      "note": "best was 0.723 dense and 0.011 lexical, against floors of 0.855 and 0.055"
+    },
+    {
+      "q": "मेरे बेटे का स्कूल दाखिला कैसे होगा?",
+      "form": "hi",
+      "state": "bihar",
+      "expect": "handoff",
+      "outcome": "held",
+      "ms": 644,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='मेरे बेटे का स्कूल दाखिला कैसे होगा?') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='मेरे बेटे का स्कूल दाखिला कैसे होगा?') -> nothing returned: below_floor",
+        "escalation: below_floor"
+      ],
+      "reason": "below_floor",
+      "note": "best was 0.795 dense and 0.000 lexical, against floors of 0.855 and 0.055"
+    },
+    {
+      "q": "petrol ka rate kya hai aaj",
+      "form": "hinglish",
+      "state": "bihar",
+      "expect": "handoff",
+      "outcome": "held",
+      "ms": 595,
+      "trace": [
+        "llm:intent: policy",
+        "resolver: resolve_drug(question='petrol ka rate kya hai aaj') -> no drug in the formulary fits",
+        "router: docs: scheme question",
+        "docs: answer_from_documents(query='petrol ka rate kya hai aaj') -> nothing returned: below_floor",
+        "escalation: below_floor"
+      ],
+      "reason": "below_floor",
+      "note": "best was 0.840 dense and 0.000 lexical, against floors of 0.855 and 0.055"
+    },
+    {
+      "q": "I want to speak to a human about my claim",
+      "form": "en",
+      "state": "bihar",
+      "expect": "handoff",
+      "outcome": "held",
+      "ms": 46,
+      "trace": [
+        "escalation: asked for a person"
+      ],
+      "reason": "out_of_scope",
+      "note": "asked for a person"
+    }
+  ]
+}
