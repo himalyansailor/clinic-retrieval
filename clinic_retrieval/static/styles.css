@@ -1,0 +1,141 @@
+:root {
+  --ink: #15181d;
+  --muted: #5d6673;
+  --line: #e2e5ea;
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --ok: #0f7a3d;
+  --no: #b3261e;
+  --warn: #8a5300;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 0 56px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+header {
+  padding: 22px 28px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+
+h1 { margin: 0; font-size: 20px; letter-spacing: -0.01em; }
+h2 { margin: 26px 0 4px; font-size: 15px; text-transform: uppercase;
+     letter-spacing: 0.08em; color: var(--muted); }
+h3 { margin: 22px 0 8px; font-size: 13px; text-transform: uppercase;
+     letter-spacing: 0.08em; color: var(--muted); }
+
+#status { margin: 6px 0 0; color: var(--muted); font-size: 13px;
+          font-variant-numeric: tabular-nums; }
+
+main { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.clinic-row { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+
+.clinic {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 9px 14px;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+.clinic small { display: block; color: var(--muted); font-size: 12px; }
+.clinic[aria-pressed="true"] { border-color: var(--ink); background: var(--card);
+                               box-shadow: inset 0 0 0 1px var(--ink); }
+
+#ask-form { display: flex; gap: 10px; }
+
+#question {
+  flex: 1;
+  padding: 13px 15px;
+  font: 17px/1.4 inherit;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+}
+#question:focus { outline: 2px solid var(--ink); outline-offset: -1px; }
+
+button[type="submit"] {
+  padding: 13px 24px;
+  font: 600 16px inherit;
+  border: 0;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #fff;
+  cursor: pointer;
+}
+
+.examples { margin-top: 16px; }
+.examples h4 { margin: 12px 0 6px; font-size: 12px; color: var(--muted);
+               text-transform: uppercase; letter-spacing: 0.08em; }
+.examples div { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font: 14px inherit;
+  color: var(--ink);
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--muted); }
+
+#verdict { font: 600 14px inherit; letter-spacing: 0.04em;
+           text-transform: uppercase; }
+#verdict.yes { color: var(--ok); }
+#verdict.no { color: var(--no); }
+#verdict.ask { color: var(--warn); }
+#verdict span { color: var(--muted); font-weight: 400; text-transform: none;
+                letter-spacing: 0; margin-left: 10px; }
+
+#answer { font-size: 18px; line-height: 1.6; margin: 10px 0 0; }
+
+#options { margin-top: 14px; }
+#options div { display: flex; gap: 8px; flex-wrap: wrap; }
+
+#sources { margin: 16px 0 0; font-size: 14px; }
+#sources div { display: flex; gap: 10px; padding: 5px 0;
+               border-top: 1px dashed var(--line); }
+#sources dt { color: var(--muted); min-width: 170px; }
+#sources dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+#trace { margin: 0; padding-left: 20px; font-size: 14px; }
+#trace li { padding: 3px 0; }
+#trace b { font-weight: 600; }
+#trace .guard b { color: var(--warn); }
+#trace .escalation b { color: var(--no); }
+#trace .verifier b { color: var(--ok); }
+
+.flags { margin-top: 10px; font-size: 14px; color: var(--warn); }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px;
+        font-variant-numeric: tabular-nums; }
+th { text-align: right; font-weight: 600; color: var(--muted);
+     padding: 7px 8px; border-bottom: 1px solid var(--line); font-size: 13px; }
+td { text-align: right; padding: 7px 8px; border-bottom: 1px solid var(--line); }
+th:first-child, td:first-child { text-align: left; }
+
+.hint { color: var(--muted); font-size: 13px; margin: 8px 0 0; max-width: 72ch; }
+
+@media (max-width: 620px) {
+  #ask-form { flex-direction: column; }
+  table { font-size: 13px; }
+}

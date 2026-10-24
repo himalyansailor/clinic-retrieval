@@ -1,0 +1,32 @@
+{
+  "source": "SAMPLE. Counts written for a pipeline demo. Codes reference data/formulary/formulary.json.",
+  "clinics": [
+    {
+      "state": "bihar",
+      "code": "BR-CL-114",
+      "counted": "2026-03-18 09:40",
+      "stock": {
+        "D-AMX-125": 0,
+        "D-ORS-001": 240,
+        "D-IFA-060": 18,
+        "D-PCM-500": 600,
+        "D-OXY-010": 12,
+        "D-ALB-400": 95,
+        "D-CTZ-010": 40
+      }
+    },
+    {
+      "state": "jharkhand",
+      "code": "JH-CL-207",
+      "counted": "2026-03-17 17:10",
+      "stock": {
+        "D-AMX-125": 90,
+        "D-ORS-001": 0,
+        "D-IFA-060": 310,
+        "D-PCM-500": 150,
+        "D-MTR-400": 60,
+        "D-VTA-001": 22
+      }
+    }
+  ]
+}

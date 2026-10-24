@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clinic retrieval</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Clinic retrieval</h1>
+  <p id="status">loading…</p>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="clinic-row" id="clinics"></div>
+
+    <form id="ask-form">
+      <input id="question" type="text" maxlength="500" autocomplete="off"
+             placeholder="Ask in English, Hindi, or Hindi typed in Latin script">
+      <button type="submit">Ask</button>
+    </form>
+
+    <div class="examples" id="examples"></div>
+  </section>
+
+  <section class="panel" id="result" hidden>
+    <div id="verdict"></div>
+    <p id="answer"></p>
+    <div class="examples" id="options"></div>
+    <dl id="sources"></dl>
+    <h3>Agents that ran</h3>
+    <ol id="trace"></ol>
+  </section>
+
+  <section class="panel">
+    <h2>This session, per input form</h2>
+    <p class="hint">Devanagari, English and romanised Hindi are counted
+      separately. An average across them hides the one that fails.</p>
+    <table id="live"><thead><tr>
+      <th>form</th><th>asked</th><th>answered</th><th>abstain</th>
+      <th>mean score</th><th>p95 ms</th><th>redacted</th>
+    </tr></thead><tbody></tbody></table>
+
+    <h2>Drug names nothing matched</h2>
+    <p class="hint">The input to curating formulary aliases. A closed
+      vocabulary gets good by someone reading this list weekly, not by a
+      bigger model.</p>
+    <table id="unresolved"><thead><tr>
+      <th>question</th><th>times</th><th>nearest in formulary</th>
+    </tr></thead><tbody></tbody></table>
+
+    <h2>Gold set, RAGAS metrics without a judge model</h2>
+    <table id="ragas"><thead><tr>
+      <th>form</th><th>n</th><th>answered</th><th>context recall</th>
+      <th>context precision</th><th>faithfulness</th><th>answer relevance</th>
+    </tr></thead><tbody></tbody></table>
+    <p class="hint">Runs the gold set through the served model once per
+      process, so it fills in after a minute or two. Context recall and
+      precision need no model; faithfulness and relevance are measured against
+      whatever model is configured.</p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

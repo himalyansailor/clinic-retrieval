@@ -1,0 +1,25 @@
+{"q": "What is the PM-JAY cover limit per family per year?", "form": "en", "state": "bihar", "expect": "pmjay-bihar", "figures": [500000]}
+{"q": "आयुष्मान भारत में प्रति परिवार कितना कवर मिलता है?", "form": "hi", "state": "bihar", "expect": "pmjay-bihar", "figures": [500000]}
+{"q": "ayushman bharat yojana mein kitna cover milta hai", "form": "hinglish", "state": "bihar", "expect": "pmjay-bihar", "figures": [500000]}
+{"q": "Does Jharkhand run a state top-up on PM-JAY?", "form": "en", "state": "jharkhand", "expect": "pmjay-jharkhand"}
+{"q": "झारखंड में पीएम-जय पर राज्य टॉप-अप है क्या?", "form": "hi", "state": "jharkhand", "expect": "pmjay-jharkhand"}
+{"q": "What is the Janani Suraksha Yojana amount for a rural delivery?", "form": "en", "state": "bihar", "expect": "jsy-bihar", "figures": [1400]}
+{"q": "जननी सुरक्षा योजना में ग्रामीण प्रसव पर कितनी राशि मिलती है?", "form": "hi", "state": "bihar", "expect": "jsy-bihar", "figures": [1400]}
+{"q": "janani suraksha yojna gramin prasav ki rashi kitni hai", "form": "hinglish", "state": "bihar", "expect": "jsy-bihar", "figures": [1400]}
+{"q": "What is the Janani Suraksha Yojana amount for a rural delivery?", "form": "en", "state": "jharkhand", "expect": "jsy-jharkhand", "figures": [1700]}
+{"q": "जननी सुरक्षा योजना में शहरी प्रसव पर कितनी राशि मिलती है?", "form": "hi", "state": "jharkhand", "expect": "jsy-jharkhand", "figures": [1200]}
+{"q": "What should staff do when a listed drug is out of stock?", "form": "en", "state": "bihar", "expect": "drugs"}
+{"q": "दवा स्टॉक में न हो तो क्या करना चाहिए?", "form": "hi", "state": "bihar", "expect": "drugs"}
+{"q": "dawa stock mein nahi hai to kya karna chahiye", "form": "hinglish", "state": "jharkhand", "expect": "drugs"}
+{"q": "How often are cold chain items checked against the temperature log?", "form": "en", "state": "jharkhand", "expect": "drugs"}
+{"q": "कोल्ड चेन सामग्री की जाँच कब होती है?", "form": "hi", "state": "bihar", "expect": "drugs"}
+{"q": "When does a clinic refer a patient to the district hospital?", "form": "en", "state": "bihar", "expect": "protocols"}
+{"q": "ज़िला अस्पताल कब रेफर किया जाता है?", "form": "hi", "state": "jharkhand", "expect": "protocols"}
+{"q": "zila aspatal kab refer kiya jata hai", "form": "hinglish", "state": "bihar", "expect": "protocols"}
+{"q": "What happens to records when there is no connectivity?", "form": "en", "state": "bihar", "expect": "protocols"}
+{"q": "कनेक्टिविटी न होने पर रिकॉर्ड का क्या होता है?", "form": "hi", "state": "jharkhand", "expect": "protocols"}
+{"q": "What is the weather in Patna tomorrow?", "form": "en", "state": "bihar", "expect": "handoff"}
+{"q": "Who won the cricket match last night?", "form": "en", "state": "jharkhand", "expect": "handoff"}
+{"q": "मेरे बेटे का स्कूल दाखिला कैसे होगा?", "form": "hi", "state": "bihar", "expect": "handoff"}
+{"q": "petrol ka rate kya hai aaj", "form": "hinglish", "state": "bihar", "expect": "handoff"}
+{"q": "I want to speak to a human about my claim", "form": "en", "state": "bihar", "expect": "handoff"}

@@ -1,0 +1,153 @@
+{
+  "source": "SAMPLE. Written for a pipeline demo. Not a formulary, and no dosing information by design.",
+  "revised": "2026-02-02",
+  "drugs": [
+    {
+      "code": "D-ALB-400",
+      "generic": "Albendazole tablet",
+      "cold_chain": false,
+      "aliases": [
+        "albendazole",
+        "अल्बेंडाजोल",
+        "wormex"
+      ]
+    },
+    {
+      "code": "D-AMX-125",
+      "generic": "Amoxicillin dispersible tablet",
+      "cold_chain": false,
+      "aliases": [
+        "amoxicillin",
+        "amoxycillin",
+        "amoksisilin",
+        "एमोक्सिसिलिन",
+        "amoxibest"
+      ]
+    },
+    {
+      "code": "D-CTZ-010",
+      "generic": "Cetirizine tablet",
+      "cold_chain": false,
+      "aliases": [
+        "cetirizine",
+        "सिटिरिजीन"
+      ]
+    },
+    {
+      "code": "D-FES-100",
+      "generic": "Iron sucrose injection",
+      "cold_chain": false,
+      "aliases": [
+        "iron sucrose",
+        "ferric sucrose",
+        "आयरन सुक्रोज"
+      ]
+    },
+    {
+      "code": "D-IFA-060",
+      "generic": "Iron and folic acid tablet",
+      "cold_chain": false,
+      "aliases": [
+        "ifa",
+        "iron folic acid",
+        "iron tablet",
+        "आईएफए",
+        "आयरन फोलिक एसिड",
+        "ferrovit"
+      ]
+    },
+    {
+      "code": "D-MGS-200",
+      "generic": "Magnesium sulphate injection",
+      "cold_chain": false,
+      "aliases": [
+        "magnesium sulphate",
+        "mgso4",
+        "मैग्नीशियम सल्फेट"
+      ]
+    },
+    {
+      "code": "D-MTR-400",
+      "generic": "Metronidazole tablet",
+      "cold_chain": false,
+      "aliases": [
+        "metronidazole",
+        "मेट्रोनिडाजोल"
+      ]
+    },
+    {
+      "code": "D-MVC-010",
+      "generic": "Measles and rubella vaccine",
+      "cold_chain": true,
+      "aliases": [
+        "measles vaccine",
+        "mr vaccine",
+        "खसरा टीका",
+        "measles rubella"
+      ]
+    },
+    {
+      "code": "D-ORS-001",
+      "generic": "ORS sachet",
+      "cold_chain": false,
+      "aliases": [
+        "ors",
+        "oral rehydration salts",
+        "ओआरएस",
+        "rehydration salts",
+        "nimkol"
+      ]
+    },
+    {
+      "code": "D-OXY-010",
+      "generic": "Oxytocin injection",
+      "cold_chain": true,
+      "aliases": [
+        "oxytocin",
+        "ऑक्सीटोसिन",
+        "oxytocine"
+      ]
+    },
+    {
+      "code": "D-PCM-500",
+      "generic": "Paracetamol tablet",
+      "cold_chain": false,
+      "aliases": [
+        "paracetamol",
+        "pcm",
+        "पैरासिटामोल",
+        "febrinil"
+      ]
+    },
+    {
+      "code": "D-TTX-005",
+      "generic": "Tetanus toxoid injection",
+      "cold_chain": true,
+      "aliases": [
+        "tetanus toxoid",
+        "tt injection",
+        "टिटनेस"
+      ]
+    },
+    {
+      "code": "D-VTA-001",
+      "generic": "Vitamin A solution",
+      "cold_chain": false,
+      "aliases": [
+        "vitamin a",
+        "विटामिन ए",
+        "retinol"
+      ]
+    },
+    {
+      "code": "D-ZNS-020",
+      "generic": "Zinc sulphate dispersible tablet",
+      "cold_chain": false,
+      "aliases": [
+        "zinc",
+        "zinc sulphate",
+        "जिंक"
+      ]
+    }
+  ]
+}

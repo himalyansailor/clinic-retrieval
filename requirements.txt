@@ -1,0 +1,8 @@
+# Pinned for a reproducible run. pyproject.toml carries the loose ranges.
+# The retrieval pipeline needs the embedding model. The rest is the HTTP layer
+# and the tests.
+sentence-transformers==6.1.0
+fastapi==0.150.0
+uvicorn[standard]==0.54.0
+pytest==9.1.1
+httpx==0.28.1

@@ -1,0 +1,35 @@
+{"q": "is amoxicillin available", "expect": "D-AMX-125"}
+{"q": "ors sachet hai kya", "expect": "D-ORS-001"}
+{"q": "is paracetamol in stock", "expect": "D-PCM-500"}
+{"q": "is zinc available", "expect": "D-ZNS-020"}
+{"q": "albendazole stock", "expect": "D-ALB-400"}
+{"q": "measles vaccine stock", "expect": "D-MVC-010"}
+{"q": "tt injection available", "expect": "D-TTX-005"}
+{"q": "क्या ऑक्सीटोसिन है", "expect": "D-OXY-010"}
+{"q": "पैरासिटामोल उपलब्ध है", "expect": "D-PCM-500"}
+{"q": "जिंक स्टॉक में है", "expect": "D-ZNS-020"}
+{"q": "खसरा टीका कितना बचा है", "expect": "D-MVC-010"}
+{"q": "amoxycilin stock", "expect": "D-AMX-125"}
+{"q": "paracetmol available", "expect": "D-PCM-500"}
+{"q": "oxytocine kitna bacha hai", "expect": "D-OXY-010"}
+{"q": "metronidazol stock", "expect": "D-MTR-400"}
+{"q": "albendazol hai kya", "expect": "D-ALB-400"}
+{"q": "cetrizine available", "expect": "D-CTZ-010"}
+{"q": "ferrovit stock", "expect": "D-IFA-060"}
+{"q": "febrinil stock mein hai", "expect": "D-PCM-500"}
+{"q": "wormex available", "expect": "D-ALB-400"}
+{"q": "nimkol kitna hai", "expect": "D-ORS-001"}
+{"q": "iron tablet hai kya", "expect": "D-IFA-060"}
+{"q": "iron sucrose stock", "expect": "D-FES-100"}
+{"q": "magnesium sulphate available", "expect": "D-MGS-200"}
+{"q": "vitamin a stock", "expect": "D-VTA-001"}
+{"q": "is iron available", "expect": "ambiguous"}
+{"q": "आयरन है क्या", "expect": "ambiguous"}
+{"q": "is insulin available", "expect": "unresolved"}
+{"q": "is aspirin in stock", "expect": "unresolved"}
+{"q": "petrol ka rate kya hai aaj", "expect": "unresolved"}
+{"q": "dawa stock mein nahi hai to kya karna chahiye", "expect": "unresolved"}
+{"q": "What is the PM-JAY cover limit?", "expect": "unresolved"}
+{"q": "oral rehydration salts stock", "expect": "D-ORS-001"}
+{"q": "आयरन फोलिक एसिड कितना बचा है", "expect": "D-IFA-060"}
+{"q": "magnesium sulphate injection hai kya", "expect": "D-MGS-200"}
