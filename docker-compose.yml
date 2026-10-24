@@ -1,0 +1,24 @@
+# The whole stack on one box: the API and a local model server.
+#   docker compose up -d
+#   docker compose exec ollama ollama pull qwen2.5:3b-instruct
+#   docker compose restart api        # it probes for the model once at startup
+#   open http://localhost:8000
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+
+  api:
+    build: .
+    depends_on: [ollama]
+    environment:
+      LLM_BASE_URL: http://ollama:11434/v1
+      LLM_MODEL: qwen2.5:3b-instruct
+    ports:
+      - "8000:8000"
+
+volumes:
+  ollama:
